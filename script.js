@@ -21,7 +21,6 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages
 	    		}
 	    	}
 	    }
-	    console.log(itemsID);
 	    getItemData(itemsID);
 	  });
 	}
@@ -49,7 +48,6 @@ function getItemData(itemsID) {
 				    	items.push(data);
 				    	document.getElementById("museumGallery").innerHTML += `<div class="col"><div class="card object-${data.objectID}"><img src="${data.primaryImage}" alt="${data.title}" class="img-responsive"/><h2>${data.title}</h2><p>${data.artistDisplayName}</p><a href="${data.objectURL}" class="btn-link" target="_blank">More Details</a> <button onclick="addItem(${data.objectID})" class="btn-link">Save</button></div></div>`;
 				    }
-				    console.log(items);
 				  });
 				}
 				)
